@@ -1,3 +1,5 @@
+This is an absolute bare bone pure Ruby application that will perform RSA encryption and decryption of text files via the command line. 
+
 Setup:
 
 Generate your own RSA private/public key pair and save them in the correspondingly name files inside this app. 
