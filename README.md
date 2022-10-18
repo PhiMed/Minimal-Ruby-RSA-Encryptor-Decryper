@@ -1,10 +1,17 @@
 This is an absolute bare-bones pure Ruby application that will perform RSA encryption and decryption of user provided text files via the command line. 
 
-Setup:
+**Setup:**
 
-Generate your own RSA private/public key pair and save them in the correspondingly name files inside this app. 
+* Generate your own RSA private/public key pair and save them in the correspondingly named files inside this app automically by running these two commands from the top level directory for the app.
 
-Install dependencies: `gem install encrypto_signo` , `bundle install`
+`openssl genrsa -out lib/private.key 2048`
+`openssl rsa -pubout -in path/to/private.key -out lib/public.key`
+
+(or insert your own existing keys)
+
+* Install dependencies: `gem install encrypto_signo` , `bundle install`
+
+**To use:**
 
 From the command line:
 
