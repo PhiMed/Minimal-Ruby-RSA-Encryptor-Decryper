@@ -1,4 +1,4 @@
-This is an absolute bare bonex pure Ruby application that will perform RSA encryption and decryption of text files via the command line. 
+This is an absolute bare-bones pure Ruby application that will perform RSA encryption and decryption of user provided text files via the command line. 
 
 Setup:
 
