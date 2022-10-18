@@ -1,5 +1,3 @@
-# Minimal-Ruby-RSA-Signer-Verifier
-
 Setup:
 
 Generate your own RSA private/public key pair and save them in the correspondingly name files inside this app. 
