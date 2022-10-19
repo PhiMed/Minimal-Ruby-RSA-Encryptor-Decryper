@@ -8,19 +8,13 @@ class Encryptor
   end
 
   def encrypt
-    encrypted_string = EncryptoSigno.encrypt(public_key, file_contents)
-    file = File.new(encrypted_output_file_path, mode: "w")
-    file.write(encrypted_string)
-    file.close
+    write_to_file(encrypted_string, encrypted_output_file_path)
     puts "#{user_provided_file} was encrypted using public key and saved as #{encrypted_output_file_path}"
   end
 
   def decrypt
-    decrypted_string = EncryptoSigno.decrypt(private_key, file_contents)
-    file = File.new(decrypted_output_file_path, mode: "w")
-    file.write(decrypted_string)
-    file.close
-    puts "#{user_provided_file} was decrypted using private key and saved as #{decrypted_output_file_path}"
+    write_to_file(decrypted_string, decrypted_output_file_path)
+     puts "#{user_provided_file} was decrypted using private key and saved as #{decrypted_output_file_path}"
   end
 
   private 
@@ -30,6 +24,20 @@ class Encryptor
     results = file.read
     file.close
     results
+  end
+
+  def write_to_file(string, path)
+    file = File.new(path, mode: "w")
+    file.write(string)
+    file.close
+  end
+
+  def encrypted_string
+    EncryptoSigno.encrypt(public_key, file_contents)
+  end
+
+  def decrypted_string
+    EncryptoSigno.decrypt(private_key, file_contents)
   end
 
   def encrypted_output_file_path
